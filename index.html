@@ -180,45 +180,43 @@
     <!-- Play Button to start music -->
     <button class="play-button" id="playButton">Play Music</button>
 
-    <!-- Moving Images -->
-    <div class="moving-images">
-        <img src="my.jpg" alt="Tunu's Picture">
-    </div>
+    
 
     <script>
-    // JavaScript to start the audio automatically
-    window.onload = function() {
-        var audio = new Audio('worst.mp3'); // Replace with your audio link
-        audio.loop = true; // To loop the music
-        audio.play().catch(error => {
-            console.error('Error playing audio:', error);
-        });
-    };
+        // JavaScript to start the audio when the user clicks the play button
+        document.getElementById('playButton').onclick = function() {
+            var audio = new Audio('worst.mp3'); // Replace with your audio link
+            audio.loop = true; // To loop the music
+            audio.play();
 
-    // Animation to make falling leaves and snowflakes
-    setInterval(function() {
-        var leaf = document.createElement('div');
-        leaf.className = 'falling-leaf';
-        leaf.innerHTML = '🍂';
-        leaf.style.left = Math.random() * 100 + '%';
-        leaf.style.animationDuration = Math.random() * 3 + 2 + 's';
-        document.body.appendChild(leaf);
-        setTimeout(function() {
-            leaf.remove();
-        }, 5000);
-    }, 1000);
+            // Hide the play button after clicking
+            this.style.display = 'none';
+        };
 
-    setInterval(function() {
-        var snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.innerHTML = '❄️';
-        snowflake.style.left = Math.random() * 100 + '%';
-        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-        document.body.appendChild(snowflake);
-        setTimeout(function() {
-            snowflake.remove();
-        }, 5000);
-    }, 1000);
+        // Animation to make falling leaves and snowflakes
+        setInterval(function() {
+            var leaf = document.createElement('div');
+            leaf.className = 'falling-leaf';
+            leaf.innerHTML = '🍂';
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(leaf);
+            setTimeout(function() {
+                leaf.remove();
+            }, 5000);
+        }, 1000);
+
+        setInterval(function() {
+            var snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄️';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(snowflake);
+            setTimeout(function() {
+                snowflake.remove();
+            }, 5000);
+        }, 1000);
     </script>
 </body>
-        </html>
+</html>
