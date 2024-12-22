@@ -13,6 +13,7 @@
             padding: 50px;
             position: relative;
             overflow: hidden;
+            margin: 0;
         }
 
         h1 {
@@ -92,13 +93,14 @@
             justify-content: space-evenly;
             margin-top: 40px;
             position: relative;
-            animation: move 15s ease-in-out infinite;
+            overflow-x: hidden;
         }
 
         .moving-images img {
             width: 200px;
             height: auto;
             border-radius: 10px;
+            animation: move 15s ease-in-out infinite;
         }
 
         @keyframes move {
