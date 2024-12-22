@@ -33,21 +33,7 @@
             margin-right: auto;
         }
 
-        .message {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            font-size: 18px;
-            color: #ff3366;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .message-2 {
+        .message, .message-2 {
             background-color: #fff;
             border-radius: 10px;
             padding: 20px;
@@ -158,12 +144,14 @@
     <script>
         // JavaScript to start the audio when the user clicks the play button
         document.getElementById('playButton').onclick = function() {
-            var audio = new Audio('worst.mp3'); // Replace with your audio link
-            audio.loop = true; // To loop the music
-            audio.play();
-
-            // Hide the play button after clicking
-            this.style.display = 'none';
+            var audio = new Audio('worst.mp3'); // Ensure the path is correct
+            audio.loop = true;
+            audio.play().then(() => {
+                this.style.display = 'none';
+            }).catch(error => {
+                console.error('Error playing audio:', error);
+                alert('Unable to play the audio. Please check the audio file path.');
+            });
         };
 
         // Animation to make falling leaves and snowflakes
