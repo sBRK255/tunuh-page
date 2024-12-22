@@ -15,10 +15,33 @@
             overflow: hidden;
         }
 
+        /* Profile Picture Style */
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 5px solid pink; /* Pink border around the profile picture */
+            overflow: hidden;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         h1 {
             font-size: 50px;
             color: #ff3366;
             margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff3366;
+            margin-top: 10px;
         }
 
         p {
@@ -33,7 +56,21 @@
             margin-right: auto;
         }
 
-        .message, .message-2 {
+        .message {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            font-size: 18px;
+            color: #ff3366;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .message-2 {
             background-color: #fff;
             border-radius: 10px;
             padding: 20px;
@@ -104,6 +141,14 @@
     </style>
 </head>
 <body>
+    <!-- Profile Picture -->
+    <div class="profile-picture">
+        <img src="my.jpg" alt="Profile Picture">
+    </div>
+
+    <!-- Name of the Person -->
+    <div class="name">Madame the Programmer</div>
+
     <h1>For My Love, Tunu 💖</h1>
 
     <!-- First Message Box -->
@@ -138,20 +183,17 @@
     <!-- Moving Images -->
     <div class="moving-images">
         <img src="my.jpg" alt="Tunu's Picture">
-        <img src="tunu.jpg" alt="Cody's Picture">
     </div>
 
     <script>
         // JavaScript to start the audio when the user clicks the play button
         document.getElementById('playButton').onclick = function() {
-            var audio = new Audio('worst.mp3'); // Ensure the path is correct
-            audio.loop = true;
-            audio.play().then(() => {
-                this.style.display = 'none';
-            }).catch(error => {
-                console.error('Error playing audio:', error);
-                alert('Unable to play the audio. Please check the audio file path.');
-            });
+            var audio = new Audio('worst.mp3'); // Replace with your audio link
+            audio.loop = true; // To loop the music
+            audio.play();
+
+            // Hide the play button after clicking
+            this.style.display = 'none';
         };
 
         // Animation to make falling leaves and snowflakes
@@ -180,4 +222,4 @@
         }, 1000);
     </script>
 </body>
-</html>
+        </html>
